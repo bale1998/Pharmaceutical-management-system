@@ -1,0 +1,129 @@
+CREATE TABLE usermodule.user_ (
+  user_id int,
+  login_id text,
+  email text,
+  password text,
+  user_name text,
+  role_id int,
+  PRIMARY KEY (user_id)
+);
+
+CREATE INDEX ON usermodule.user_ (login_id);
+
+CREATE INDEX ON usermodule.user_ (email);
+
+CREATE INDEX ON usermodule.user_ (user_name);
+
+CREATE INDEX ON usermodule.user_ (role_id);
+............................................................
+CREATE TABLE usermodule.roles (
+    role_id int,
+    role_name text,
+    PRIMARY KEY (role_id)
+);................................................................................
+CREATE TABLE usermodule.permission_roles_ref (
+    permission_id int,
+    role_id int,
+    PRIMARY KEY ((permission_id, role_id))
+);...............
+CREATE TABLE usermodule.permissions (
+  permission_id INT,
+  permission_name TEXT,
+  PRIMARY KEY (permission_id)
+);
+.....................................
+CREATE TABLE usermodule.logs (
+  log_id INT,
+  log_datetime date,
+  log_action TEXT,
+  log_description TEXT,
+  status TEXT,
+  PRIMARY KEY (log_id)
+);
+reporting module:
+
+CREATE TABLE reportmodule.user_ (
+    user_id int PRIMARY KEY,
+    user_name text,
+    contacts set<text>
+);
+CREATE TABLE reportmodule.usertype (
+    usertype_id INT PRIMARY KEY,
+    usertype_name TEXT
+);
+CREATE TABLE reportmodule.request (
+  request_id INT PRIMARY KEY,
+  quantity INT,
+  date DATE
+);
+CREATE TABLE reportmodule.medication (
+  medication_id INT,
+  name TEXT,
+  dosage TEXT,
+  PRIMARY KEY (medication_id)
+);
+CREATE TABLE reportmodule.assignment (
+  assignment_id INT PRIMARY KEY,
+  quantity INT,
+  date DATE
+);
+CREATE TABLE reportmodule.allocation (
+  allocation_id INT PRIMARY KEY,
+  quantity INT,
+  date_ DATE
+);
+pharmacymodule
+
+CREATE TABLE pharmacymodule.pharmacy_staff (
+  staff_id INT PRIMARY KEY,
+  name TEXT,
+  phone_number TEXT,
+  address TEXT
+);
+CREATE TABLE pharmacymodule.pharmacy (
+  pharmacy_id INT,
+  name TEXT,
+  address TEXT,
+  district TEXT,
+  region TEXT,
+  PRIMARY KEY (pharmacy_id)
+);
+CREATE TABLE  pharmacymodule.orders (
+  order_id INT,
+  quantity INT,
+  date_ordered DATE,
+  PRIMARY KEY (order_id)
+);
+CREATE TABLE pharmacymodule.inventory (
+  quantity_delivered INT,
+  quantity_available INT,
+  expiry_date DATE,
+  PRIMARY KEY (expiry_date)
+);????
+Medication module
+
+CREATE TABLE medicationmodule.medication (
+  medication_id INT PRIMARY KEY,
+  name TEXT,
+  quantity INT,
+  dosage TEXT,
+  RouteOfAdministration TEXT,
+  frequency TEXT
+);
+CREATE TABLE medicationmodule.medication_admin_details (
+  medication_id INT,
+  admin_id INT,
+  PRIMARY KEY (medication_id, admin_id),
+  FOREIGN KEY (medication_id) REFERENCES medicationmodule.medication(medication_id),
+  FOREIGN KEY (admin_id) REFERENCES pharmacymodule.pharmacy_staff(staff_id)
+);?????
+CREATE TABLE medicationmodule.medication_admin (
+  admin_id INT,
+  ward_number INT,
+  patient_name TEXT,
+  date_ DATE,
+  PRIMARY KEY (admin_id)
+);
+
+
+
