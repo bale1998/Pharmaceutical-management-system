@@ -1,44 +1,44 @@
 -- Inserting dummy data into user_ table under reportmodule
-INSERT INTO reportmodule.user_ (user_id, user_name, contacts) VALUES (1, 'John Doe', {'1234567890'});
-INSERT INTO reportmodule.user_ (user_id, user_name, contacts) VALUES (2, 'Jane Doe', {'0987654321'});
+INSERT INTO user_ (user_id, user_name, contacts) VALUES (1, 'John Doe', {'1234567890'});
+INSERT INTO user_ (user_id, user_name, contacts) VALUES (2, 'Jane Doe', {'0987654321'});
 
 
 -- Inserting dummy data into usertype table
-INSERT INTO reportmodule.usertype (usertype_id, usertype_name) VALUES (1, 'Nurse');
-INSERT INTO reportmodule.usertype (usertype_id, usertype_name) VALUES (2, 'phamarcists');
+INSERT INTO usertype (usertype_id, usertype_name) VALUES (1, 'Nurse');
+INSERT INTO usertype (usertype_id, usertype_name) VALUES (2, 'phamarcists');
 
 -- Inserting dummy data into request table
-INSERT INTO reportmodule.request (request_id, quantity, date) VALUES (1, 10, '2023-04-23');
-INSERT INTO reportmodule.request (request_id, quantity, date) VALUES (2, 5, '2023-04-22');
+INSERT INTO request (request_id, quantity, date) VALUES (1, 10, '2023-04-23');
+INSERT INTO request (request_id, quantity, date) VALUES (2, 5, '2023-04-22');
 
 -- Inserting dummy data into medication table under reportmodule
-INSERT INTO reportmodule.medication (medication_id, name, dosage) VALUES (1, 'Paracetamol', '500mg');
-INSERT INTO reportmodule.medication (medication_id, name, dosage) VALUES (2, 'Ibuprofen', '200mg');
+INSERT INTO medication (medication_id, name, dosage) VALUES (1, 'Paracetamol', '500mg');
+INSERT INTO medication (medication_id, name, dosage) VALUES (2, 'Ibuprofen', '200mg');
 
 -- Inserting dummy data into assignment table
-INSERT INTO reportmodule.assignment (assignment_id, quantity, date) VALUES (1, 7, '2023-04-21');
-INSERT INTO reportmodule.assignment (assignment_id, quantity, date) VALUES (2, 12, '2023-04-20');
+INSERT INTO assignment (assignment_id, quantity, date) VALUES (1, 7, '2023-04-21');
+INSERT INTO assignment (assignment_id, quantity, date) VALUES (2, 12, '2023-04-20');
 
 -- Inserting dummy data into allocation table
-INSERT INTO reportmodule.allocation (allocation_id, quantity, date_) VALUES (1, 20, '2023-04-19');
-INSERT INTO reportmodule.allocation (allocation_id, quantity, date_) VALUES (2, 15, '2023-04-18');
+INSERT INTO allocation (allocation_id, quantity, date_) VALUES (1, 20, '2023-04-19');
+INSERT INTO allocation (allocation_id, quantity, date_) VALUES (2, 15, '2023-04-18');
 
 -- Inserting dummy data into hospital table
-INSERT INTO reportmodule.hospital (hospital_id, hospital_name, location, address) VALUES (1, 'St. Mary Hospital', 'New York', '123 Main St');
-INSERT INTO reportmodule.hospital (hospital_id, hospital_name, location, address) VALUES (2, 'General Hospital', 'Los Angeles', '456 Elm St');
+INSERT INTO hospital (hospital_id, hospital_name, location, address) VALUES (1, 'St. Mary Hospital', 'New York', '123 Main St');
+INSERT INTO hospital (hospital_id, hospital_name, location, address) VALUES (2, 'General Hospital', 'Los Angeles', '456 Elm St');
 
 -- Inserting dummy data into pharmacy_staff table under pharmacymodule
-INSERT INTO pharmacymodule.pharmacy_staff (staff_id, name, "phone_number", address) VALUES (1, 'Sarah Smith', '123-456-7890', '789 Oak St');
-INSERT INTO pharmacymodule.pharmacy_staff (staff_id, name, "phone_number", address) VALUES (2, 'John Smith', '098-765-4321', '987 Pine St');
+INSERT INTO pharmacy_staff (staff_id, name, "phone_number", address) VALUES (1, 'Sarah Smith', '123-456-7890', '789 Oak St');
+INSERT INTO pharmacy_staff (staff_id, name, "phone_number", address) VALUES (2, 'John Smith', '098-765-4321', '987 Pine St');
 
 -- Inserting dummy data into pharmacy table under pharmacymodule
-INSERT INTO pharmacymodule.pharmacy (pharmacy_id, name, address, district, region) VALUES (1, 'ABC Pharmacy', '456 Main St', 'Central', 'North');
-INSERT INTO pharmacymodule.pharmacy (pharmacy_id, name, address, district, region) VALUES (2, 'XYZ Pharmacy', '789 Elm St', 'East', 'South');
+INSERT INTO pharmacy (pharmacy_id, name, address, district, region) VALUES (1, 'ABC Pharmacy', '456 Main St', 'Central', 'North');
+INSERT INTO pharmacy (pharmacy_id, name, address, district, region) VALUES (2, 'XYZ Pharmacy', '789 Elm St', 'East', 'South');
 
 -- Inserting dummy data into orders table
-INSERT INTO pharmacymodule.orders (order_id, quantity, date_ordered) VALUES (1, 5, '2023-04-17');
-INSERT INTO pharmacymodule.orders (order_id, quantity, date_ordered) VALUES (2, 10, '2023-04-16');
+INSERT INTO orders (order_id, quantity, date_ordered) VALUES (1, 5, '2023-04-17');
+INSERT INTO orders (order_id, quantity, date_ordered) VALUES (2, 10, '2023-04-16');
 
 -- Inserting dummy data into inventory table
-ALTER TABLE reportmodule.allocation ADD date_ DATE;
+ALTER TABLE allocation ADD date_ DATE;
 
